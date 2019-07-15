@@ -1,0 +1,23 @@
+.DisplayGrid--container {
+    display: flex;
+    flex-direction: column;
+    padding: 20%;
+    background-color:#999;
+}
+
+.DisplayGrid--row {
+    display: flex;
+    flex-direction:row;
+}
+
+.DisplayGrid--column {
+    height: 15px;
+    width: 15px;
+    // border: 1px solid black;
+    margin: 1px;
+    background-color: white;
+}
+
+.living {
+    background-color: black;
+}
