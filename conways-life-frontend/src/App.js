@@ -9,7 +9,6 @@ function App() {
   // ============== Hooks ============== //
   const [grid, setGrid] = useState([])
   const [changeState, setChangeState] = useState(false) // forces change state, grid is too nested to trigger a change
-  const [stop, setStop] = useState(false) // Check if stop program
 
   // ============== Create empty grid ============== //
   useEffect(() => {
@@ -41,29 +40,34 @@ function App() {
   }
 
   // ============== Algorithm for conway's rules of life ============== //
+  // ===== Start Game ===== //
+  let timerId;
+  function runGame() {
+    // disable button after pressed once
+    timerId = window.setInterval(rulesOfLife, 500)
+  }
+  // ===== Stop Game ===== //
+  function stopGameOfLife(e) {
+    e.preventDefault()
+    window.clearInterval(timerId)
+  }
+
+  // ===== Algorithm for game ===== //
   function rulesOfLife() {
-    setStop(false)
     // rule1: any live cell with fewer than two live neighbors dies, as if by underpopulation.
     // rule2: any live cell with two or three live neighbors lives on to the next generation.
     // rule3: any live cell with more than three live neighbors dies, as if by overpopulation
     // rule4: any dead cell with three live neighbors becomes a live cell, as if by reproduction.
-    let count = 0
-
-    window.setInterval(() => {
-      console.log("Loop")
-      for (let row = 0; row < grid.length; row++) {
-        // column loop
-        for (let col = 0; col < grid[row].length; col++) {
-          let count = 0;
-          // write a check for each individual cell around it
-          console.log("Row: ", row, "Col: ", col)
-          // check stop
-          if (stop) {
-            return console.log("STOPPPPP")
-          }
-        }
+    console.log("Loop")
+    for (let row = 0; row < grid.length; row++) {
+      // column loop
+      for (let col = 0; col < grid[row].length; col++) {
+        let count = 0;
+        // write a check for each individual cell around it
+        console.log("Row: ", row, "Col: ", col)
+        // check stop
       }
-    }, 1000)
+    }
   }
 
 
@@ -71,8 +75,9 @@ function App() {
     <div className="App">
       <div className="container">
         <DisplayGrid grid={grid} setGrid={setGrid} changeCell={changeCell} />
-        <button onClick={rulesOfLife}>Start!</button>
-        <button onClick={() => setStop(true)}>!!!STOP!!!</button>
+        <button onClick={runGame}>Start!</button>
+        <button onClick={(e) => stopGameOfLife(e)}>STOP!!!</button>
+        {/* TODO: Make reset button */}
       </div>
     </div>
   );
