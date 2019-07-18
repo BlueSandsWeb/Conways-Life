@@ -231,30 +231,35 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <p>Generations: {generation}</p>
-        <DisplayGrid grid={grid} setGrid={setGrid} changeCell={changeCell} />
-
-        <div className="presets">
-          <button onClick={presetCenterLine}>Center Line</button>
-          <button onClick={presetCross}>cross</button>
-          <button onClick={presetFlower}>flower</button>
-        </div>
-
+        <h1>Conway's game of life</h1>
         <div className="controls">
-          <button onClick={runGame}>Start!</button>
+          {/* <button onClick={runGame}>Start!</button>
           <button onClick={(e) => stopGameOfLife(e)}>STOP!!!</button>
-          <button onClick={(e) => clear(e)}>clear</button>
+          <button onClick={(e) => clear(e)}>clear</button> */}
           <placeholder>Speed:
             <input type="number" value={speed} onChange={handleSpeedChange} />
           </placeholder>
           <placeholder>Size:
             <input type="number" value={gridSize} onChange={handleGridSizeChange} />
           </placeholder>
-
+          <div class="menu-button">
+            <span>Menu</span>
+            <p onClick={presetCenterLine}><span>Line</span></p>
+            <p onClick={presetCross}><span>cross</span></p>
+            <p onClick={presetFlower}><span>flower</span></p>
+            <p onClick={runGame}>Start!</p>
+            <p onClick={(e) => stopGameOfLife(e)}>Stop</p>
+            <p onClick={(e) => clear(e)}>clear</p>
+          </div>
+          <div className="gameOfLife">
+            <DisplayGrid grid={grid} setGrid={setGrid} changeCell={changeCell} />
+            <p>Generations: {generation}</p>
+        </div>
 
         </div>
-        {/* TODO: Make reset button */}
       </div>
+      <h1>Animated Material Design Button</h1>
+
     </div>
   );
 }
@@ -262,4 +267,6 @@ function App() {
 export default App;
 
 
-// Look at get animation frame to replace window set interval
+// do a write up for conway's game of life (essay)
+
+// Sprint Challenge interview question: You have 5 minutes, teach me something.
