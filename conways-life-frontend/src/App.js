@@ -52,6 +52,7 @@ function App() {
     let tempArr = makeBlankGrid()
     setGrid(tempArr);
     setGeneration(0);
+    setInterval(null);
   }
 
   // ============== Click handler to change individual cells ============== //
@@ -200,7 +201,13 @@ function App() {
 
   function presetCross() {
     let tempArr = makeBlankGrid();
-
+    for (let i = 0; i < tempArr.length; i++) {
+      tempArr[i][parseInt(tempArr.length / 2)] = 1
+    }
+    for (let i = 0; i < tempArr.length; i++) {
+      tempArr[parseInt(tempArr.length / 2)][i] = 1
+    }
+    setGrid(tempArr);
   }
 
   function presetFlower() {
