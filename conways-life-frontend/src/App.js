@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './App.css';
 
 import DisplayGrid from './components/DisplayGrid/DisplayGrid'
 import { useInterval } from './hooks/useInterval'
