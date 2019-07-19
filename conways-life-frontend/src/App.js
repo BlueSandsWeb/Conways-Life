@@ -232,31 +232,35 @@ function App() {
     <div className="App">
       <div className="container">
         <h1>Conway's game of life</h1>
-        <div className="controls">
-          {/* <button onClick={runGame}>Start!</button>
-          <button onClick={(e) => stopGameOfLife(e)}>STOP!!!</button>
-          <button onClick={(e) => clear(e)}>clear</button> */}
-          <placeholder>Speed:
-            <input type="number" value={speed} onChange={handleSpeedChange} />
-          </placeholder>
-          <placeholder>Size:
-            <input type="number" value={gridSize} onChange={handleGridSizeChange} />
-          </placeholder>
-          <div class="menu-button">
-            <span>Menu</span>
-            <p onClick={presetCenterLine}><span>Line</span></p>
-            <p onClick={presetCross}><span>cross</span></p>
-            <p onClick={presetFlower}><span>flower</span></p>
-            <p onClick={runGame}>Start!</p>
-            <p onClick={(e) => stopGameOfLife(e)}>Stop</p>
-            <p onClick={(e) => clear(e)}>clear</p>
-          </div>
+        <div className="sideBySide">
           <div className="gameOfLife">
             <DisplayGrid grid={grid} setGrid={setGrid} changeCell={changeCell} />
             <p>Generations: {generation}</p>
+          </div>
+          <div className="controls">
+            {/* <button onClick={runGame}>Start!</button>
+            <button onClick={(e) => stopGameOfLife(e)}>STOP!!!</button>
+            <button onClick={(e) => clear(e)}>clear</button> */}
+            <placeholder>Speed:
+              <input type="number" value={speed} onChange={handleSpeedChange} />
+            </placeholder>
+            <placeholder>Size:
+              <input type="number" value={gridSize} onChange={handleGridSizeChange} />
+            </placeholder>
+            <div className="menuContainer">
+              <div class="menu-button">
+                <span>Menu</span>
+                <p onClick={presetCenterLine}><span>Line</span></p>
+                <p onClick={presetCross}><span>cross</span></p>
+                <p onClick={presetFlower}><span>flower</span></p>
+                <p onClick={runGame}>Start!</p>
+                <p onClick={(e) => stopGameOfLife(e)}>Stop</p>
+                <p onClick={(e) => clear(e)}>clear</p>
+              </div>
+            </div>
+          </div>
         </div>
 
-        </div>
       </div>
       <h1>Animated Material Design Button</h1>
 

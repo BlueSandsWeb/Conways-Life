@@ -18,6 +18,21 @@
     justify-content: center;
 }
 
+.controls {
+	display: flex;
+	flex-direction: column;
+	placeholder {
+		margin-top: 20px;
+	}
+	.menuContainer {
+		height: 100%;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
 .presetBtn {
     padding: 10px;
     margin: 10px;
