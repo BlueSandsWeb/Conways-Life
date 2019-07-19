@@ -259,17 +259,9 @@ function App() {
             </div>
           </div>
         </div>
-
       </div>
       <h1>Animated Material Design Button</h1>
-
     </div>
   );
 }
-
 export default App;
-
-
-// do a write up for conway's game of life (essay)
-
-// Sprint Challenge interview question: You have 5 minutes, teach me something.
