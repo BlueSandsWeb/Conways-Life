@@ -67,3 +67,9 @@ function presetCross() {
 	}
 	setGrid(tempArr);
 }
+
+## Optimizations I would have made
+
+The run time of this particular application is ok, but a bit slow when the grid size gets large enough.  One optimization I would make is to have two arrays a current and next array and to have the state point to one or the other.  Which ever one is not being pointed at becomes the array to change for the next iteration.  This would bring the run time down to O(n) and make the application run about twice as fast.
+
+Another change I would make is to have the displayed grid of cells be contained and the cells become smaller when the number of cells is increased instead of the grid growing in size.  This would be easy to implement by using a little javascript to calculate the correct width and height for the cells based on the available room on the fly.
