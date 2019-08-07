@@ -22,7 +22,7 @@ The only two values I used within the array are 1’s and 0’s.  The ones are l
 Example: 
 
 [[0,0,0],                [[0,1,0],                 [[0,0,0],
- [1,1,1],      ==>     [0,1,0],     ==>      [1,1,1],
+ [1,1,1],     	 ==>      [0,1,0],         ==>      [1,1,1],
  [0,0,0]]                 [0,1,0]]                  [0,0,0]]
 
 
