@@ -2,6 +2,12 @@
     box-sizing: border-box;
 }
 
+h1 {
+	display: flex;
+	justify-content: center;
+	font-family: 'Ubuntu';
+}
+
 .sideBySide {
     display: flex;
     flex-direction: row;
@@ -41,9 +47,11 @@
 .DisplayGrid--container {
     display: flex;
     flex-direction: column;
-    padding: 40px 40px;
     background-color:#999;
-    // max-width: 600px;
+	max-width: 700px;
+	width: 100%; 
+	justify-content: stretch;
+
 }
 
 .DisplayGrid--row {
@@ -209,3 +217,4 @@
 		}
 	}
 }
+

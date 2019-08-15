@@ -260,7 +260,6 @@ function App() {
           </div>
         </div>
       </div>
-      <h1>Animated Material Design Button</h1>
     </div>
   );
 }
